@@ -1,0 +1,82 @@
+&[window-id="login"] {
+	background:#111;
+	color:white;
+	.cancel {
+		position:absolute;
+		right:10px;
+		top:10px;
+		background:whiteSmoke;
+		border:none;
+		font-size:20px;
+		color:#111;
+		line-height:20px;
+		text-transform:uppercase;
+		padding:5px;
+	}
+	.login-form {
+		width:250px;
+		position:absolute;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+		.header {
+			font-size:35px;
+			margin-bottom:30px;
+			text-align:center;
+		}
+		label {
+			font-size:20px;
+		}
+		input {
+			background:#111;
+			border:none;
+			border-bottom:solid 2px @accent;
+			padding:10px;
+			margin-bottom:5px;
+			margin-top:5px;
+			font-size:15px;
+			width:100%;
+			color:whiteSmoke;
+			
+			&::-webkit-input-placeholder {
+				-webkit-transition:color 0.25s;
+			}
+			&:focus::-webkit-input-placeholder {
+				color:transparent;
+				-webkit-transition:color 0.25s;
+			}
+		}
+		.btn {
+			margin-top:30px;
+			padding:10px;
+			font-size:15px;
+			float:right;
+			width:125px;
+			background-color:transparent;
+			color:white;
+			text-transform:uppercase;
+			border:none;
+			//border-bottom:solid 2px white;
+			
+			&.primary {
+				//border-bottom:solid 2px @accent;
+			}
+			
+			-webkit-transition:background-color, color 1s;
+			
+			margin-top:5px;
+			margin-bottom:5px;
+			
+			&:hover {
+				background-color:white;
+				&.primary {
+					background-color:@accent;
+				}
+				color:#111;
+				border-color:transparent;
+				-webkit-transition:background-color, color 1s;
+				cursor:pointer;
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"main": "app/index.html",
+	"name": "Minecraft Open Launcher",
+	"description": "An Open Source Minecraft Launcher written in NodeJS",
+	"version": "0.1",
+	"keywords": [ "minecraft", "game", "opensource" ],
+	"mode": "production",
+	"window": {
+		"title": "Minecraft Open Launcher",
+		"width": 640,
+		"height": 480,
+		"show": true,
+		"toolbar": true,
+		"frame": true,
+		"resizable": true,
+		"show_in_taskbar": true
+	},
+	"dependencies": {}
+}

@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="../res/css/style.css" rel="stylesheet"></link>
+	</head>
+	<body>
+		<div id="screens">
+			<div window-id="loading" class="screen active">
+				<div class="loading-spinner">
+					<div class="spinner"></div>
+				</div>
+
+			</div>
+			<div window-id="accounts" class="screen">
+				<div class="accounts-container">
+					<div class="account" data-type="account" account-name="MajesticFudgie">
+						<span class="avatar"><img src="https://minotar.net/helm/MajesticFudgie/100.png"/></span>
+						<div class="extra">
+							<span class="name">MajesticFudgie</span>
+							<span class="delete">Delete</span>
+						</div>
+					</div>
+					<div class="account" data-type="account" account-name="MysticRed">
+						<span class="avatar"><img src="https://minotar.net/helm/MysticRed/100.png"/></span>
+						<div class="extra">
+							<span class="name">MysticRed</span>
+							<span class="delete">Delete</span>
+						</div>
+					</div>
+					<div class="account" data-type="account" account-name="TMFKSOFT">
+						<span class="avatar"><img src="https://minotar.net/helm/TMFKSOFT/100.png"/></span>
+						<div class="extra">
+							<span class="name">TMFKSOFT</span>
+							<span class="delete">Delete</span>
+						</div>
+					</div>
+					<div class="account" data-type="account" account-name="OdysseyRPG">
+						<span class="avatar"><img src="https://minotar.net/helm/OdysseyRPG/100.png"/></span>
+						<div class="extra">
+							<span class="name">OdysseyRPG</span>
+							<span class="delete">Delete</span>
+						</div>
+					</div>
+					<div class="account" data-type="add">
+						<span class="avatar"><img src="../res/img/add_user.png"/></span>
+						<div class="extra">
+							<span class="name">Add Account</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div window-id="login" class="screen">
+				<div class="login-form">
+					<div class="header">Minecraft Login</div>
+					
+					<label>Username</label>
+					<br/>
+					<input id="email" placeholder="Email or Username"/>
+					<br/>
+					<label>Password</label>
+					<br/>
+					<input id="password" placeholder="Password" type="password"/>
+					<br/>
+					<button id="back" class="btn">Back</button>
+					<button id="login" class="btn primary">Login</button>
+				</div>
+			</div>
+			<div window-id="main" class="screen">
+				<div class="navbar">
+					<a href="#" page-id="news" class="item active">Update News</a>
+					<a href="#" class="item">Versions</a>
+					<a href="#" class="item">Servers</a>
+					<a href="#" class="item">Skin</a>
+					<a href="#" class="item">Resource Packs</a>
+					<a href="#" class="item">Shader Packs</a>
+					<a href="#" class="item">Mods</a>
+					<span class="pull-right">
+						<img class="item image" src="https://minotar.net/helm/MajesticFudgie/49.png"/>
+					</span>
+				</div>
+				<div id="pages">
+					<div page-id="news" class="page active">
+						<iframe src="http://mcupdate.tumblr.com/" nwdisable nwfaketop frameborder=0 style="width:100%; height:100%"></iframe>
+					</div>
+				</div>
+				<div id="launch-bar">
+					<button id="launch">Launch Minecraft</button>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			This Launcher is not affiliated with Minecraft, Mojang or Microsoft, but is an open source community effort!
+			<span class="pull-right">
+				Minecraft Open Launcher v0.1
+			</span>
+		</div>
+	</body>
+	<script src="../res/js/jquery-3.1.1.min.js"></script>
+	<script src="app.js"></script>
+	<script src="../res/js/gui.js"></script>
+</html>

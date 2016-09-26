@@ -1,0 +1,27 @@
+.loading-spinner {
+	width:100px;
+	height:100px;
+	
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	
+	.spinner {
+		width:90px;
+		height:90px;
+		border:solid 5px transparent;
+		border-left-color:#2ecc71;
+		border-top-color:#2ecc71;
+		border-radius:100%;
+		-webkit-animation: spin .5s infinite linear;
+	}
+}
+@-webkit-keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+textarea, input, button { outline: none; }
+.pull-right {
+	float:right;
+}
