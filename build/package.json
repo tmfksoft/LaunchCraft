@@ -1,8 +1,8 @@
 {
 	"main": "app/index.html",
-	"name": "Minecraft Open Launcher",
+	"name": "LaunchCraft",
 	"description": "An Open Source Minecraft Launcher written in NodeJS",
-	"version": "0.1",
+	"version": "0.0.1-alpha",
 	"keywords": [ "minecraft", "game", "opensource" ],
 	"mode": "production",
 	"window": {
@@ -15,5 +15,7 @@
 		"resizable": true,
 		"show_in_taskbar": true
 	},
-	"dependencies": {}
+	"dependencies": {
+		"request":"latest"
+	}
 }
