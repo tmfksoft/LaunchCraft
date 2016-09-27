@@ -25,18 +25,22 @@ $(document).ready(function(){
 			alert("Password cannot be left blank!");
 			return;
 		}
-		global.functions.authenticate(email,password,function(res,id){
+		global.functions.authenticate(email,password,function(res,data){
 			if (res) {
-				global.functions.setSetting("currentAccount",id);
+				global.functions.setSetting("currentAccount",data);
 				populateAccounts();
 				
 				var accounts = global.functions.getSetting("accounts");
-				var avatarUrl = "https://minotar.net/helm/"+accounts[id].username+"/49.png";
+				var avatarUrl = "https://minotar.net/helm/"+accounts[data].username+"/49.png";
 				$('.screen[window-id="main"] #accountAvatar').attr('src',avatarUrl);
+				
+				// Reset Form
+				$('.screen[window-id="login"] #email').val('');
+				$('.screen[window-id="login"] #password').val('');
 				
 				switchScreen("main");
 			} else {
-				alert("Error logging in!");
+				alert("Error performing login:\n"+data.errorMessage);
 			}
 		});
 	});
@@ -47,12 +51,27 @@ $(document).ready(function(){
 	});
 	$('.accounts-container .account[data-type="account"]').mouseup(function(ev){
 		if (ev.button == 0) {
-			// Left Click			
-			var accounts = global.functions.getSetting("accounts");
-			var avatarUrl = "https://minotar.net/helm/"+accounts[$(this).attr("account-id")].username+"/49.png";
-			$('.screen[window-id="main"] #accountAvatar').attr('src',avatarUrl);
-			
-			switchScreen("main");
+			// Left Click
+			var uuid = $(this).attr("account-id");
+			global.functions.validateSession(uuid,function(res){
+				var acc = global.functions.getAccount(uuid);
+				if (res) {
+					var avatarUrl = "https://minotar.net/helm/"+acc.username+"/49.png";
+					$('.screen[window-id="main"] #accountAvatar').attr('src',avatarUrl);
+					switchScreen("main");
+				} else {
+					global.functions.refreshSession(uuid,function(data){
+						if (data) {
+							var avatarUrl = "https://minotar.net/helm/"+acc.username+"/49.png";
+							$('.screen[window-id="main"] #accountAvatar').attr('src',avatarUrl);
+							switchScreen("main");
+						} else {
+							$('.screen[window-id="login"] #email').val(acc.login);
+							switchScreen("login");
+						}
+					});
+				}
+			});
 		} else if (ev.button == 2) {
 			// Right Click
 			var name = $(this).attr("account-name");
