@@ -16,6 +16,13 @@
 		"show_in_taskbar": true
 	},
 	"dependencies": {
-		"request":"latest"
+		"request":"latest",
+		"less":"latest",
+		"nwjs":"latest"
+	},
+	"scripts": {
+		"start":"npm run build-css && nw .",
+		"build": "npm run build-css",
+		"build-css":"lessc -x res/less/combined.less res/css/style.css"
 	}
 }

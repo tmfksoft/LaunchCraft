@@ -1,1 +1,0 @@
-lessc -x build/res/less/combined.less build/res/css/style.css
